@@ -1,9 +1,9 @@
-<h1 align="center">𝐈𝐒𝐀𝐀𝐂 𝐁𝐎𝐓</h1>
+<h1 align="center">Ṣ̌PØĮLĘŔ 𝐁𝐎𝐓</h1>
 
 <p align="center">
   <img
-    src="https://github.com/user-attachments/assets/db59afdd-3fe9-488d-bdb4-5c2648239ee0"
-    alt="ISAAC Banner"
+    src="https://github.com/user-attachments/assets/866eca30-78b2-42bb-b192-cc87b799fe93"
+    alt="SPOILER Banner"
     width="100%"
   />
 </p>

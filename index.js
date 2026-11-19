@@ -19,6 +19,7 @@ const { registerConnectionHandler } = require('./events/connection');
 const { registerMessageHandler } = require('./events/messages');
 const { fetchCore } = require('./utils/fetchCore');
 const { acquireLock, releaseLock } = require('./utils/instanceLock');
+const { promptForAuthentication } = require('./utils/authPrompt');
 
 const fs = require('fs');
 
@@ -103,27 +104,25 @@ async function startBot() {
     restoreSessionFromEnv();
     restoreSettingsFromEnv();
 
-    const { state, saveCreds } = await useMultiFileAuthState(
-      path.join(__dirname, config.authFolder)
-    );
+    const authDir = path.join(__dirname, config.authFolder);
+    let { state, saveCreds } = await useMultiFileAuthState(authDir);
+    let phoneNumber = null;
+    if (!state.creds.registered) {
+      const choice = await promptForAuthentication();
+      if (choice.mode === 'pairing') {
+        phoneNumber = choice.phoneNumber;
+      } else {
+        fs.mkdirSync(authDir, { recursive: true });
+        fs.writeFileSync(path.join(authDir, 'creds.json'), choice.credentials, { mode: 0o600 });
+        ({ state, saveCreds } = await useMultiFileAuthState(authDir));
+        if (!state.creds.registered) {
+          throw new Error('The supplied session ID is not a registered WhatsApp session.');
+        }
+      }
+    }
     const wasAlreadyRegistered = state.creds.registered;
 
     const { version } = await fetchLatestBaileysVersion();
-
-    let phoneNumber = null;
-    if (!state.creds.registered && process.stdin.isTTY) {
-      const readline = require('readline');
-      const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
-      phoneNumber = await new Promise((resolve) => {
-        rl.question(
-          'Enter your WhatsApp number with country code (e.g. 254754574642), or press Enter to use QR instead: ',
-          (answer) => {
-            rl.close();
-            resolve(answer && answer.trim() ? answer.trim() : null);
-          }
-        );
-      });
-    }
 
     const sock = makeWASocket({
       version,

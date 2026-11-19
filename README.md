@@ -45,6 +45,12 @@
 
 ## PANEL DEPLOYMENT 
 
+On a fresh panel deployment with no saved WhatsApp login, the server console
+offers two choices: enter a WhatsApp number with country code to receive a
+pairing code, or paste an existing `SPOILER-MD:~...` session ID. Follow the
+console instructions to finish linking the device. Existing saved sessions
+continue to start automatically.
+
 <p align="center">
       <b>
      Click below to Download latest SPOILER-MD zip.

@@ -1,7 +1,7 @@
 const readline = require('readline');
 
 function decodeSessionId(sessionId) {
-  const value = String(sessionId || '').trim().replace(/^SPOILER-MD:~/, '');
+  const value = String(sessionId || '').trim().replace(/^(?:SPOILER-MD:~|SPOILER X :~)/i, '');
   if (!value || !/^[A-Za-z0-9+/_-]+={0,2}$/.test(value)) {
     throw new Error('That does not look like a valid SPOILER-MD session ID.');
   }

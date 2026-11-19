@@ -43,6 +43,15 @@ test('option 2 decodes a pasted SPOILER-MD session ID', async () => {
   assert.deepEqual(JSON.parse(selected.credentials.toString('utf8')), credentials);
 });
 
+test('option 2 accepts the legacy SPOILER X session ID emitted by this bot', async () => {
+  const credentials = { registered: true, identity: 'legacy' };
+  const sessionId = `SPOILER X :~${Buffer.from(JSON.stringify(credentials)).toString('base64')}`;
+  const prompt = runPrompt(['2', sessionId]);
+  const selected = await prompt.result;
+  assert.equal(selected.mode, 'session');
+  assert.deepEqual(JSON.parse(selected.credentials.toString('utf8')), credentials);
+});
+
 test('invalid choices and malformed session IDs are rejected before accepting valid input', async () => {
   const credentials = { registered: true, identity: 'ok' };
   const sessionId = Buffer.from(JSON.stringify(credentials)).toString('base64');

@@ -73,7 +73,8 @@ function restoreSessionFromEnv() {
 
   try {
     if (!fs.existsSync(authDir)) fs.mkdirSync(authDir, { recursive: true });
-    const buffer = Buffer.from(raw.replace(/^SPOILER-MD:~/, ''), 'base64');
+    const encodedSession = String(raw).replace(/^(?:SPOILER-MD:~|SPOILER X :~)/i, '');
+    const buffer = Buffer.from(encodedSession, 'base64');
     fs.writeFileSync(credsPath, buffer);
     logger.info('✅ Restored session from SESSION_ID.');
   } catch (error) {

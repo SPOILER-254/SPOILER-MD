@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#090c14">
+  <title>SPOILER-MD · WhatsApp Pairing</title>
+  <style>
+    :root{color-scheme:dark;--bg:#090c14;--ink:#f4f4fb;--muted:#b9bac8;--aqua:#22dcc4;--violet:#8475f3;--green:#20df5a;--panel:rgba(24,27,39,.79);--line:rgba(255,255,255,.12)}
+    *{box-sizing:border-box}html{min-height:100%;background:var(--bg)}body{margin:0;min-height:100vh;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 100% 28%,rgba(24,183,174,.22),transparent 42%),radial-gradient(ellipse at 0% 44%,rgba(124,94,218,.23),transparent 47%),radial-gradient(circle at 50% 100%,rgba(81,35,67,.3),transparent 40%),#090c14;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.42;background-image:radial-gradient(1.5px 1.5px at 12% 16%,#fff 99%,transparent),radial-gradient(1px 1px at 81% 22%,#d4ecff 99%,transparent),radial-gradient(1.4px 1.4px at 61% 45%,#fff 99%,transparent),radial-gradient(1px 1px at 25% 67%,#d8d3ff 99%,transparent),radial-gradient(1.3px 1.3px at 91% 81%,#fff 99%,transparent),radial-gradient(1px 1px at 41% 93%,#ccecff 99%,transparent);background-size:317px 287px,389px 350px,433px 383px,277px 333px,369px 291px,431px 407px}
+    .topbar{position:sticky;z-index:5;top:0;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px max(20px,calc((100vw - 850px)/2));min-height:86px;background:rgba(8,10,17,.88);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}.brand{display:flex;align-items:center;gap:14px;min-width:0}.mark{width:58px;height:58px;flex:0 0 58px;border-radius:20px;display:grid;place-items:center;background:linear-gradient(140deg,#7561de,#43c9bb);box-shadow:0 10px 30px rgba(78,106,205,.24)}.mark svg{width:31px;height:31px}.brand-name{font-size:22px;font-weight:850;letter-spacing:.035em;line-height:1.1}.brand-sub{margin-top:4px;font-size:14px;color:#b9bdc9;white-space:nowrap}.online{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:rgba(255,255,255,.055);padding:10px 16px;border-radius:999px;font-size:13px;letter-spacing:.06em;color:#dedfea}.dot{width:10px;height:10px;background:var(--green);border-radius:50%;box-shadow:0 0 13px rgba(32,223,90,.7)}
+    main{width:min(100% - 28px,760px);margin:34px auto 56px}.card{padding:clamp(22px,5vw,38px);border:1px solid rgba(255,255,255,.15);border-radius:34px;background:linear-gradient(145deg,rgba(64,68,102,.48),rgba(15,22,35,.75) 54%,rgba(49,31,47,.62));box-shadow:0 26px 80px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.08);backdrop-filter:blur(18px)}h1{font-size:clamp(27px,5vw,35px);line-height:1.13;margin:0 0 11px;letter-spacing:-.025em}.intro{color:var(--muted);font-size:clamp(15px,3.5vw,19px);line-height:1.55;margin:0 0 25px}.section-title{font-size:19px;font-weight:780;margin:21px 0 10px}.section-copy{font-size:14px;line-height:1.5;color:var(--muted);margin:0 0 18px}.label{display:block;font-size:16px;font-weight:760;margin:23px 0 10px}.input-wrap{position:relative}.input-wrap .plus{position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:23px;color:#d5d6e1}.field,textarea{width:100%;border:1px solid rgba(255,255,255,.14);border-radius:25px;background:rgba(12,15,25,.74);color:var(--ink);font:inherit;outline:none;transition:border .18s,box-shadow .18s}.field{height:65px;padding:0 18px 0 51px;font-size:18px;letter-spacing:.02em}.field:focus,textarea:focus{border-color:rgba(48,214,198,.75);box-shadow:0 0 0 3px rgba(48,214,198,.12)}.field::placeholder{color:#858897}.actions{display:grid;grid-template-columns:1fr;gap:11px;margin-top:17px}.btn{width:100%;min-height:60px;border:1px solid transparent;border-radius:22px;color:#101827;font:inherit;font-weight:820;font-size:17px;cursor:pointer;transition:transform .15s,filter .15s,opacity .15s}.btn:hover{filter:brightness(1.06)}.btn:active{transform:scale(.99)}.btn:disabled{opacity:.5;cursor:not-allowed;filter:grayscale(.18)}.primary{background:linear-gradient(105deg,#8170ee 0%,#21cfbd 100%);box-shadow:0 12px 28px rgba(49,197,191,.16)}.secondary{background:rgba(255,255,255,.06);color:#e8e9f2;border-color:rgba(255,255,255,.13);min-height:54px}.copy{background:rgba(255,255,255,.07);border:1px solid var(--line);color:#f4f4fb;padding:11px 16px;border-radius:14px;font-weight:750;cursor:pointer}.copy:disabled{opacity:.45;cursor:not-allowed}.session-link{display:inline-flex;margin-top:15px;color:#aaff88;text-underline-offset:4px;font-weight:700;cursor:pointer;background:none;border:0;padding:0;font:inherit}.session-panel{display:none;margin-top:18px;padding:18px;border-radius:20px;background:rgba(0,0,0,.21);border:1px solid var(--line)}.session-panel.show{display:block}.session-panel textarea{min-height:112px;padding:13px;font-size:12px;line-height:1.45;resize:vertical;overflow-wrap:anywhere}.small-note{font-size:12px;line-height:1.45;color:#aaaebd;margin:9px 0 0}.result{display:none;margin-top:22px;padding:20px;border-radius:23px;background:rgba(6,12,20,.62);border:1px solid rgba(255,255,255,.13)}.result.show{display:block}.result-head{display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:800;font-size:17px}.result-text{font-size:14px;line-height:1.5;color:var(--muted);margin:9px 0 15px}.pair-code{display:none;margin:14px 0;padding:18px;border-radius:17px;background:rgba(4,9,18,.7);text-align:center;font:800 clamp(25px,7vw,38px)/1.2 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.11em;color:#fff}.pair-code.show{display:block}.code-row{display:none;gap:10px;align-items:center;flex-wrap:wrap}.code-row.show{display:flex}.code-expiry{font-size:12px;color:#b7bdcc}.steps{margin-top:27px;padding:19px;border:1px solid rgba(255,255,255,.12);border-radius:25px;background:rgba(5,9,17,.27)}.steps-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:14px}.steps-head strong{font-size:17px}.steps-head span{color:var(--muted);font-size:13px}.step{display:flex;gap:14px;align-items:center;padding:14px;border:1px solid rgba(255,255,255,.1);border-radius:20px;background:rgba(255,255,255,.035);margin-top:10px}.step-num{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:0 0 44px;background:rgba(119,87,197,.25);border:1px solid rgba(173,151,255,.24);font-size:19px;font-weight:800}.step b{font-size:15px}.step p{margin:3px 0 0;color:var(--muted);font-size:13px}.activate-box{display:none;margin-top:17px;padding-top:16px;border-top:1px solid var(--line)}.activate-box.show{display:block}.check{display:flex;gap:10px;align-items:flex-start;color:#dddfea;font-size:13px;line-height:1.45;margin:12px 0 14px}.check input{margin-top:3px;accent-color:#22d4c1}.error{display:none;color:#ffc6c6;margin-top:12px;font-size:13px;line-height:1.45}.error.show{display:block}.footer{text-align:center;color:#858a9a;font-size:12px;padding:0 18px 25px}.lock{display:none;padding:clamp(30px,8vw,58px) 24px;text-align:center;border:1px solid var(--line);border-radius:27px;background:rgba(18,21,31,.8)}.lock.show{display:block}.lock-mark{width:50px;height:50px;margin:0 auto 14px;border-radius:16px;background:rgba(125,107,219,.22);display:grid;place-items:center;font-size:23px}.lock h2{margin:0 0 8px;font-size:23px}.lock p{margin:0;color:var(--muted);line-height:1.55}.hidden{display:none!important}
+    @media(min-width:620px){main{margin-top:38px}.actions{grid-template-columns:1fr 1fr}.actions .primary{grid-column:1/-1}.topbar{padding-left:max(24px,calc((100vw - 850px)/2));padding-right:max(24px,calc((100vw - 850px)/2))}.online{padding:13px 18px}}
+    @media(max-width:420px){.topbar{padding:12px 15px;min-height:72px}.mark{width:48px;height:48px;flex-basis:48px;border-radius:16px}.brand-name{font-size:18px}.brand-sub{font-size:12px}.online{padding:9px 11px;font-size:11px}.card{border-radius:27px}.steps-head span{display:none}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M14.2 12.1a7.1 7.1 0 0 1 10 0l.3.3a7.1 7.1 0 0 1 0 10l-3.1 3.1a7.1 7.1 0 0 1-10 0" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/><path d="M21.8 23.9a7.1 7.1 0 0 1-10 0l-.3-.3a7.1 7.1 0 0 1 0-10l3.1-3.1a7.1 7.1 0 0 1 10 0" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/></svg></div>
+      <div><div class="brand-name">SPOILER-MD</div><div class="brand-sub">WhatsApp Pairing Portal</div></div>
+    </div>
+    <div class="online"><span class="dot"></span><span id="server-label">PAIRING PORTAL</span></div>
+  </header>
+  <main>
+    <section id="lock" class="lock" aria-live="polite">
+      <div class="lock-mark" aria-hidden="true">🔒</div>
+      <h2>Private pairing access</h2>
+      <p>Open the private claim link shared by the SPOILER-MD owner to start pairing. The public page does not reveal pairing codes or session credentials.</p>
+    </section>
+    <section id="app" class="card hidden">
+      <h1>Pair Device</h1>
+      <p class="intro">Enter your WhatsApp number with country code. We’ll generate a private pairing code and capture your session securely.</p>
+      <div class="section-title">WhatsApp Number</div>
+      <p class="section-copy">Use the full international number, including country code. Digits only is fine.</p>
+      <form id="phone-form">
+        <label class="label" for="phone">Phone number</label>
+        <div class="input-wrap"><span class="plus" aria-hidden="true">＋</span><input id="phone" class="field" type="tel" inputmode="tel" autocomplete="tel" placeholder="2547XXXXXXXX" maxlength="20" required></div>
+        <div class="actions"><button id="generate" class="btn primary" type="submit">⛓ &nbsp; Generate Pair Code</button><button id="reset" class="btn secondary" type="button">↻ &nbsp; Reset</button></div>
+      </form>
+      <button id="show-session" class="session-link hidden" type="button">Use a session ID instead</button>
+      <div id="session-panel" class="session-panel">
+        <label class="label" for="session-id">Paste session ID</label>
+        <textarea id="session-id" spellcheck="false" autocomplete="off" autocapitalize="off" placeholder="SPOILER-MD:~… or SPOILER X :~…"></textarea>
+        <p class="small-note">Session IDs are passwords. They are sent only to SPOILER 2 over the private pairing connection and are never shown to other visitors.</p>
+        <button id="import-session" class="btn primary" type="button" style="margin-top:13px">Verify Session ID</button>
+      </div>
+      <div id="result" class="result" aria-live="polite">
+        <div class="result-head"><span id="result-title">Preparing your pairing…</span><span id="spinner" aria-hidden="true">●</span></div>
+        <p id="result-text" class="result-text">Keep this page open. Pairing details are private to this request.</p>
+        <div id="pair-code" class="pair-code"></div>
+        <div id="code-row" class="code-row"><button id="copy-code" class="copy" type="button">Copy code</button><span id="code-expiry" class="code-expiry"></span></div>
+        <div id="session-result" class="hidden">
+          <label class="label" for="captured-session">Your private session ID</label>
+          <textarea id="captured-session" readonly autocomplete="off" spellcheck="false"></textarea>
+          <p class="small-note">Treat this like a password. It is returned only to this private request.</p>
+          <button id="copy-session" class="copy" type="button" style="margin-top:10px">Copy session ID</button>
+        </div>
+        <div id="activate-box" class="activate-box">
+          <div class="section-copy">The session is ready to use on SPOILER-MD. Activation disconnects the old login, retains its auth folder backup, and starts the bot with this session.</div>
+          <label id="replace-check-wrap" class="check"><input id="replace-check" type="checkbox"><span>I understand this will replace the current WhatsApp login. The existing login will be retained as a backup.</span></label>
+          <button id="activate" class="btn primary" type="button">Activate this session on SPOILER-MD</button>
+        </div>
+      </div>
+      <div id="error" class="error" role="alert"></div>
+      <section class="steps">
+        <div class="steps-head"><strong>How to Pair</strong><span>Do this on your WhatsApp</span></div>
+        <div class="step"><div class="step-num">1</div><div><b>Open WhatsApp</b><p>Go to Settings (or the menu on Android).</p></div></div>
+        <div class="step"><div class="step-num">2</div><div><b>Linked Devices</b><p>Tap “Link a device”.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div><b>Link with phone number</b><p>Enter the code shown here in WhatsApp.</p></div></div>
+      </section>
+    </section>
+  </main>
+  <div class="footer">Pairing responses are private to the person who started the request. Never share a pairing code or session ID.</div>
+  <script>
+    (() => {
+      'use strict';
+      const API_BASE = 'https://freezer.thespoiler.site/__spoiler2-pairing';
+      const CLAIM_KEY = 'spoiler-md-private-claim';
+      const TICKET_KEY = 'spoiler-md-pair-ticket';
+      let claim = '';
+      let ticket = '';
+      let pollTimer = null;
+      let codeTimer = null;
+      let currentStatus = null;
+      const $ = (id) => document.getElementById(id);
+      const lock = $('lock');
+      const app = $('app');
+      const errorBox = $('error');
+      const result = $('result');
+      const pairCode = $('pair-code');
+      const codeRow = $('code-row');
+      const sessionResult = $('session-result');
+      const activateBox = $('activate-box');
+      const phoneForm = $('phone-form');
+      const hash = new URLSearchParams(location.hash.replace(/^#/, ''));
+      const hashClaim = hash.get('claim') || '';
+      try { claim = hashClaim || sessionStorage.getItem(CLAIM_KEY) || ''; } catch {}
+      if (hashClaim) {
+        try { sessionStorage.setItem(CLAIM_KEY, hashClaim); } catch {}
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+      try { ticket = sessionStorage.getItem(TICKET_KEY) || ''; } catch {}
+
+      function setError(message) { errorBox.textContent = message || ''; errorBox.classList.toggle('show', Boolean(message)); }
+      function setBusy(busy) { $('generate').disabled = busy; $('import-session').disabled = busy; $('activate').disabled = busy; }
+      function api(path, method = 'GET', body = null, withTicket = false) {
+        const headers = { 'Accept': 'application/json' };
+        if (claim) headers['X-Claim-Token'] = claim;
+        if (withTicket && ticket) headers['X-Pairing-Id'] = ticket;
+        if (body !== null) headers['Content-Type'] = 'application/json';
+        return fetch(API_BASE + path, { method, headers, body: body === null ? undefined : JSON.stringify(body), cache: 'no-store', credentials: 'omit', redirect: 'error' })
+          .then(async (response) => {
+            const data = await response.json().catch(() => ({}));
+            if (!response.ok) throw new Error(data.error || 'The request could not be completed.');
+            return data;
+          });
+      }
+      function showClaimExpired() {
+        app.classList.add('hidden'); lock.classList.add('show');
+        lock.querySelector('h2').textContent = 'Private claim expired';
+        lock.querySelector('p').textContent = 'This private pairing link is no longer active. Ask the SPOILER-MD owner for a new claim link.';
+        try { sessionStorage.removeItem(CLAIM_KEY); sessionStorage.removeItem(TICKET_KEY); } catch {}
+      }
+      function renderStatus(data) {
+        currentStatus = data;
+        $('server-label').textContent = data.connected ? 'SERVER ONLINE' : 'PAIRING READY';
+        if (data.busy && !ticket) setError('A pairing request is already in progress. Continue it in the browser tab that started it or try again later.');
+        const deadline = data.claimExpiresAt === null ? null : new Date(data.claimExpiresAt);
+        $('result-text').textContent = claim ? (deadline ? 'Private access expires ' + deadline.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + '. Keep this page open while pairing.' : 'Keep your private access link secret. Each pairing request is time-limited.') : 'Phone-number pairing is open to visitors. Keep this page open while pairing.';
+      }
+      async function initialize() {
+        lock.classList.remove('show'); app.classList.remove('hidden');
+        $('show-session').classList.toggle('hidden', !claim);
+        $('session-id').disabled = !claim;
+        $('import-session').disabled = !claim;
+        try {
+          const state = await api('/api/status');
+          renderStatus(state);
+          if (ticket) await poll();
+        } catch (error) {
+          if (claim && /expired|invalid/i.test(error.message)) showClaimExpired();
+          else setError(error.message);
+        }
+      }
+      function saveTicket(value) { ticket = value; try { sessionStorage.setItem(TICKET_KEY, value); } catch {} }
+      function startPolling() { clearInterval(pollTimer); pollTimer = setInterval(poll, 2200); void poll(); }
+      async function poll() {
+        if (!ticket) return;
+        try {
+          const data = await api('/api/pair-status', 'GET', null, true);
+          renderPair(data);
+        } catch (error) {
+          if (/expired|unavailable/i.test(error.message)) { stopPolling(); setError(error.message); }
+        }
+      }
+      function stopPolling() { clearInterval(pollTimer); pollTimer = null; clearInterval(codeTimer); codeTimer = null; setBusy(false); }
+      function renderPair(data) {
+        result.classList.add('show');
+        currentStatus = data;
+        $('spinner').classList.toggle('hidden', data.status === 'ready' || data.status === 'activated' || data.status === 'failed');
+        $('result-title').textContent = ({ starting:'Preparing your pairing…', requesting_code:'Generating your private code…', waiting_for_phone:'Pairing code ready', ready:'WhatsApp linked — session captured', activated:'SPOILER-MD is switching to this session', failed:'Pairing could not be completed' })[data.status] || 'Pairing in progress…';
+        if (data.status === 'waiting_for_phone') {
+          $('result-text').textContent = 'On WhatsApp, open Linked Devices → Link a device → Link with phone number, then enter this code.';
+          pairCode.textContent = data.code || '';
+          pairCode.classList.add('show'); codeRow.classList.add('show');
+          clearInterval(codeTimer);
+          codeTimer = setInterval(() => {
+            const left = Math.max(0, Math.ceil((data.codeExpiresAt - Date.now()) / 1000));
+            $('code-expiry').textContent = left ? `Refreshes in about ${left}s` : 'The code may have expired. Reset and try again.';
+          }, 1000);
+        }
+        if (data.status === 'ready') {
+          clearInterval(codeTimer);
+          pairCode.classList.remove('show'); codeRow.classList.remove('show');
+          $('result-text').textContent = 'Your WhatsApp session is ready. You can copy the private ID or activate it on SPOILER-MD.';
+          sessionResult.classList.remove('hidden');
+          $('captured-session').value = data.sessionId || '';
+          activateBox.classList.add('show');
+          $('replace-check-wrap').classList.toggle('hidden', !data.hasExistingSession);
+          $('activate').disabled = Boolean(data.hasExistingSession && !$('replace-check').checked);
+          setError('');
+        }
+        if (data.status === 'activated') {
+          stopPolling();
+          $('result-text').textContent = 'Session activated. SPOILER-MD is reconnecting with the new WhatsApp login.';
+          sessionResult.classList.toggle('hidden', !data.sessionId);
+          if (data.sessionId) $('captured-session').value = data.sessionId;
+          activateBox.classList.remove('show');
+          setError('');
+        }
+        if (data.status === 'failed') { stopPolling(); setError(data.error || 'The request failed. Reset and try again.'); }
+      }
+      async function beginPairing(phoneNumber) {
+        setError(''); setBusy(true); result.classList.add('show');
+        $('result-title').textContent = 'Starting secure pairing…';
+        $('result-text').textContent = 'Your number is sent only to the SPOILER 2 pairing service and is not shown to other visitors.';
+        try {
+          const data = await api('/api/pair', 'POST', { phoneNumber });
+          saveTicket(data.ticket);
+          $('phone').value = '';
+          setBusy(false); startPolling();
+        } catch (error) { setBusy(false); setError(error.message); }
+      }
+      phoneForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const value = $('phone').value.trim();
+        if (!value) return;
+        void beginPairing(value);
+      });
+      $('show-session').addEventListener('click', () => $('session-panel').classList.toggle('show'));
+      $('import-session').addEventListener('click', async () => {
+        const sessionId = $('session-id').value.trim();
+        if (!sessionId) { setError('Paste a session ID first.'); return; }
+        setError(''); setBusy(true);
+        try {
+          const data = await api('/api/session', 'POST', { sessionId });
+          $('session-id').value = '';
+          saveTicket(data.ticket); setBusy(false); startPolling();
+        } catch (error) { setBusy(false); setError(error.message); }
+      });
+      $('activate').addEventListener('click', async () => {
+        if (currentStatus?.hasExistingSession && !$('replace-check').checked) return;
+        setError(''); setBusy(true);
+        try {
+          await api('/api/activate', 'POST', {}, true);
+          $('result-title').textContent = 'SPOILER-MD is switching to this session';
+          $('result-text').textContent = 'The old authentication folder has been retained as a private backup.';
+          activateBox.classList.remove('show');
+          stopPolling();
+          setTimeout(poll, 1800);
+        } catch (error) { setBusy(false); setError(error.message); }
+      });
+      $('copy-code').addEventListener('click', async () => {
+        try { await navigator.clipboard.writeText(pairCode.textContent); $('copy-code').textContent = 'Copied'; setTimeout(() => $('copy-code').textContent = 'Copy code', 1400); }
+        catch { setError('Clipboard access was blocked. Select the code and copy it manually.'); }
+      });
+      $('copy-session').addEventListener('click', async () => {
+        try { await navigator.clipboard.writeText($('captured-session').value); $('copy-session').textContent = 'Copied'; setTimeout(() => $('copy-session').textContent = 'Copy session ID', 1400); }
+        catch { $('captured-session').focus(); $('captured-session').select(); setError('Select the session ID and copy it manually. Treat it like a password.'); }
+      });
+      $('reset').addEventListener('click', async () => {
+        stopPolling(); setError('');
+        if (ticket) { try { await api('/api/cancel', 'POST', {}, true); } catch {} }
+        ticket = ''; try { sessionStorage.removeItem(TICKET_KEY); } catch {}
+        result.classList.remove('show'); pairCode.classList.remove('show'); codeRow.classList.remove('show');
+        sessionResult.classList.add('hidden'); activateBox.classList.remove('show');
+        $('session-id').value = ''; $('captured-session').value = ''; $('replace-check').checked = false;
+        setBusy(false);
+        try { renderStatus(await api('/api/status')); } catch {}
+      });
+      $('replace-check').addEventListener('change', () => { $('activate').disabled = Boolean(currentStatus?.hasExistingSession && !$('replace-check').checked); });
+      initialize();
+    })();
+  </script>
+</body>
+</html>
